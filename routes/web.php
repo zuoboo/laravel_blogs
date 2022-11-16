@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+// ホーム画面
+Route::get('/', [BlogController::class, 'top'])->name('index');
 
 // ブログ一覧画面
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');

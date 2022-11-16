@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -14,8 +15,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        
-        return view('blogs.index');
+        $blogs = Blog::paginate(15);
+
+
+        return view('blogs.index', compact('blogs'));
     }
 
     /**
@@ -82,5 +85,13 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         //
+    }
+
+    // トップ画面のブログ表示
+    public function top()
+    {
+        $blogs = Blog::paginate(3);
+
+        return view('index', compact('blogs'));
     }
 }
