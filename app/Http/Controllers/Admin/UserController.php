@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\StoreUserRequest;
+use App\Http\Requests\Admin\UpdateUserRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -17,7 +19,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::latest('updated_at')->simplePaginate(10);
+        return view('admin.users.index', compact('users'));
     }
 
 
@@ -57,7 +60,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -67,9 +70,24 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        //
+
+        // $menu = User::findOrFail($user);
+        $updateData = $request->validated();
+
+        // 画像を変更する場合
+        if ($request->has('image')) {
+            // 変更前の画像削除
+            Storage::disk('public')->delete($user->image);
+            // 変更後の画像をアップロード、保存パスを更新対象データにセット
+            $updateData['image'] = $request->file('image')->store('menus', 'public');
+        }
+        $updateData['password'] = Hash::make($updateData['password']);
+
+        $user->update($updateData);
+
+        return to_route('admin.users.index')->with('success', 'メニューを更新しました');
     }
 
     /**
@@ -80,6 +98,10 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+
+        $user->delete();
+        Storage::disk('public')->delete($user->image);
+
+        return to_route('admin.users.index')->with('success', 'ユーザー情報を削除しました');
     }
 }

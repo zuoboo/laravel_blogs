@@ -46,8 +46,9 @@ Route::prefix('/admin')
                 Route::resource('/blogs', AdminBlogController::class)->except('show');
                 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
                 // ユーザー管理
-                Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-                Route::post('/users', [UserController::class, 'store'])->name('users.store');
+                Route::resource('/users', UserController::class)->except('show');
+                // Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+                // Route::post('/users', [UserController::class, 'store'])->name('users.store');
                 // メニュー
                 Route::resource('/menus', AdminMenuController::class)->except('show');
             });

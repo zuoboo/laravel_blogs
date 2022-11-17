@@ -4,35 +4,35 @@
     <section>
         <div class="mb-6 py-4 bg-white rounded">
             <div class="flex px-6 pb-4 border-b">
-                <h2 class="text-xl font-bold">メニュー一覧</h2>
+                <h2 class="text-xl font-bold">ユーザー一覧</h2>
                 <div class="ml-auto">
-                    <a href="/admin/menus/create"
-                        class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">新規投稿</a>
+                    <a href="/admin/users/create"
+                        class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">新規登録</a>
                 </div>
             </div>
             <div class="pt-4 px-4 overflow-x-auto">
                 <table class="table-auto w-full">
                     <thead>
                         <tr class="text-xs text-gray-500 text-left">
-                            <th class="font-medium text-center">商品名</th>
-                            <th class="font-medium">価格</th>
+                            <th class="font-medium text-center">名前</th>
+                            <th class="font-medium">メールアドレス</th>
                             <th class="font-medium">更新日時</th>
                             <th class="font-medium">操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($menus as $menu)
+                        @foreach ($users as $user)
                             <tr @class(['text-sm', 'bg-gray-50' => $loop->odd])>
                                 <td class="flex px-4 py-3 items-center">
                                     <img class="w-12 h-12 mr-4 object-cover rounded-md"
-                                        src="{{ asset('storage/' . $menu->image) }}" alt="">
-                                    <p class="font-medium">{{ $menu->name }}</p>
+                                        src="{{ asset('storage/' . $user->image) }}" alt="">
+                                    <p class="font-medium">{{ $user->name }}</p>
                                 </td>
-                                <td class="font-medium">{{ $menu->price }}</td>
-                                <td>{{ $menu->updated_at }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->updated_at }}</td>
                                 <td>
                                     <div class="flex">
-                                        <a class="mr-2" href="{{ route('admin.menus.edit', ['menu' => $menu->id]) }}">
+                                        <a class="mr-2" href="{{ route('admin.users.edit', ['user' => $user->id]) }}">
                                             <svg width="18" height="18" viewbox="0 0 18 18" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -40,7 +40,7 @@
                                                     fill="#382CDD"></path>
                                             </svg>
                                         </a>
-                                        <form action="{{ route('admin.menus.destroy', ['menu' => $menu->id]) }}"
+                                        <form action="{{ route('admin.users.destroy', ['user' => $user->id]) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -62,7 +62,7 @@
             </div>
         </div>
         <!-- ▼▼▼▼ページャー▼▼▼▼　-->
-        {{ $menus->links() }}
+        {{ $users->links() }}
         <!-- ▲▲▲▲ページャー▲▲▲▲　-->
     </section>
 @endsection
