@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cats', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('名前');
-            $table->string('breed')->comment('種類');
-            $table->integer('gender')->comment('性別(1:オス,2:メス)');
-            $table->date('date_of_birth')->comment('生年月日');
+            $table->integer('price')->comment('価格');
             $table->string('image')->comment('画像');
             $table->string('introduction')->comment('紹介文');
             $table->timestamps();
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cats');
+        Schema::dropIfExists('menus');
     }
 };

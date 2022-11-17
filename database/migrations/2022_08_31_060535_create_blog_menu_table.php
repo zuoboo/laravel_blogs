@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blog_cat', function (Blueprint $table) {
+        Schema::create('blog_menu', function (Blueprint $table) {
             $table->id();
             $table->foreignId('blog_id')->constrained();
-            $table->foreignId('cat_id')->constrained();
+            $table->foreignId('menu_id')->constrained();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog_cat');
+        Schema::dropIfExists('blog_menu');
     }
 };

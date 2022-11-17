@@ -4,12 +4,12 @@
 @section('content')
     <section class="bg-gray-100">
         <div class="container mx-auto py-40 relative">
-            <h1 class="mt-2 text-4xl font-bold font-heading text-center">ねこに癒やしてもらいませんか？</h1>
-            <p class="text-center pt-5">ねこの可愛い仕草、自由気ままな雰囲気を見ることはもちろん、<br>
-                ただ同じ空間にいるだけでも癒やされます<br>
-                当店自慢のフワッフワのねこに触れ合うことで「幸せホルモン」が補給しませんか？</p>
-            <div class="absolute right-0 bottom-0 transform translate-y-16">
-                <a href="#"><img src="/images/index/video.jpg" alt="" class="shadow-lg"></a>
+            <h1 class="mt-2 text-4xl font-bold font-heading text-center">葵CAFEで至福のひとときを過ごしませんか？</h1>
+            <p class="text-center pt-5">季節に合ったメニューをご用意し、<br>
+                皆様のご来店をお待ちしております。<br>
+                </p>
+            <div class="absolute right-0 bottom-0 transform translate-y-16 w-40">
+                <a href="#"><img src="/images/index/food.png" alt="" class="shadow-lg"></a>
             </div>
         </div>
     </section>
@@ -40,7 +40,7 @@
                         <img class="w-20 h-20 object-cover rounded-full" src="/images/index/sanitizer.jpg" alt="">
                         <div class="ml-4 w-56">
                             <h3 class="mb-1 text-2xl font-heading text-left text-blue-500">衛生管理</h3>
-                            <p class="text-left text-gray-500 text-sm">店員・ゲストの検温<br> マスクの常時着用<br> 1時間毎に全ての設備を消毒</p>
+                            <p class="text-left text-gray-500 text-sm">スタッフの検温<br> マスクの常時着用<br> 1時間毎に全ての設備を消毒</p>
                         </div>
                     </div>
                 </div>
@@ -49,11 +49,11 @@
             <div class="w-full lg:w-1/3 p-3">
                 <div class="bg-gray-100 rounded shadow">
                     <div class="flex py-10 px-6">
-                        <img class="w-20 h-20 object-cover rounded-full" src="/images/index/health-check.jpg"
+                        <img class="w-20 h-20 object-cover rounded-full" src="/images/index/terasu.png"
                             alt="">
                         <div class="ml-4 w-56">
-                            <h3 class="mb-1 text-2xl font-heading text-left text-blue-500">ねこの体調管理</h3>
-                            <p class="text-left text-gray-500 text-sm">毎日の検温<br> ワクチン接種済み<br> 定期的な検診</p>
+                            <h3 class="mb-1 text-2xl font-heading text-left text-blue-500">広々とした空間</h3>
+                            <p class="text-left text-gray-500 text-sm">テラス席をご用意してお待ちしております！<br><br></p>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,6 @@
                     <li class="bg-gray-100 text-gray-400 py-1 px-3"><a href="#">＃ねこちゃん</a></li>
                 </ul>
             </div>
-
             <div class="flex flex-wrap -mx-3">
                 @foreach ($blogs as $blog)
                 <article class="w-full md:w-1/2 lg:w-1/3 p-3">
@@ -161,17 +160,15 @@
                     <img class="rounded mx-auto" src="/images/map.jpg" alt="">
                 </div>
                 <div class="text-left lg:ml-8 px-8">
-                    <p class="font-bold text-3xl pb-5">ねこカフェららべる</p>
+                    <p class="font-bold text-3xl pb-5">葵CAFE</p>
                     <dl>
                         <dt class="text-xl font-medium">営業時間</dt>
-                        <dd class="pl-12 text-lg"><span class="mr-6">平日</span>11:00〜20:00<span class="ml-6">（L.O.
-                                19:15）</span></dd>
-                        <dd class="pl-12 text-lg"><span class="mr-1">土日祝 </span>11:00〜18:00<span class="ml-6">（L.O.
-                                17:15）</span></dd>
+                        <dd class="pl-12 text-lg"><span class="mr-6">平日</span>11:30〜16:00<span class="ml-6"></span></dd>
+                        <dd class="pl-12 text-lg"><span class="mr-1">土日祝 </span>11:00〜16:30<span class="ml-6"></span></dd>
                         <dt class="mt-5 text-xl font-medium">住所</dt>
-                        <dd class="text-lg pl-12">〒123-4567<br>東京都墨田区押上1-2-3 ●●ビル▲F</dd>
+                        <dd class="text-lg pl-12">〒795-0012<br>愛媛県大洲市大洲392</dd>
                         <dt class="mt-5 text-xl font-medium">最寄り駅から</dt>
-                        <dd class="pl-12 text-lg">とうきょうスカイツリー駅<span class="ml-6">徒歩5分</span></dd>
+                        <dd class="pl-12 text-lg">伊予大洲駅<span class="ml-6">徒歩10分</span></dd>
                     </dl>
                 </div>
             </div>

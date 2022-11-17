@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <title>@yield('title', 'ねこカフェららべる')</title>
+    <title>@yield('title', '葵CAFE')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -16,10 +16,8 @@
 <header>
     <div class="container px-4 mx-auto">
         <nav class="flex items-center justify-between py-6">
-            <a class="text-3xl font-semibold leading-none" href="/">ねこカフェららべる</a>
+            <a class="text-3xl font-semibold leading-none" href="/">葵CAFE</a>
             <ul class="hidden lg:flex ml-12 mr-auto space-x-12">
-                <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">設備</a></li>
-                <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">ねこちゃんたち</a></li>
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="/blogs">ブログ</a></li>
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">メニュー</a></li>
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">よくあるご質問</a></li>
@@ -43,15 +41,15 @@
 <footer class="bg-black">
     <div class="px-4 container mx-auto p-10 flex justify-between">
         <div class="text-white text-left">
-            <h2 class="text-xl font-semibold">ねこカフェららべる</h2>
-            <p>〒123-4567</p>
-            <p>東京都墨田区押上1-2-3 Illuminateビル9F</p>
+            <h2 class="text-xl font-semibold">葵CAFE</h2>
+            <p>〒795-0012</p>
+            <p>愛媛県大洲市大洲392</p>
+            <p>070-2223-0123</p>
+
         </div>
 
         <ul class="text-white text-left hidden md:flex flex-wrap flex-col h-12 md:w-128">
             <li class="ml-6"><a href="/" class="hover:underline">ホーム</a></li>
-            <li class="ml-6"><a href="#" class="hover:underline">設備</a></li>
-            <li class="ml-6"><a href="#" class="hover:underline">ねこちゃんたち</a></li>
             <li class="ml-6"><a href="/blogs" class="hover:underline">ブログ</a></li>
             <li class="ml-6"><a href="/#access" class="hover:underline">アクセス</a></li>
             <li class="ml-6"><a href="#" class="hover:underline">よくあるご質問</a></li>

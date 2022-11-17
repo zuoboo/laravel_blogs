@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Blog;
 use App\Models\Category;
-use App\Models\Cat;
+use App\Models\Menu;
 
 class AdminBlogController extends Controller
 {
@@ -54,8 +54,8 @@ class AdminBlogController extends Controller
     public function edit(Blog $blog)
     {
         $categories = Category::all();
-        $cats = Cat::all();
-        return view('admin.blogs.edit', ['blog' => $blog, 'categories' => $categories, 'cats' => $cats]);
+        $menus = Menu::all();
+        return view('admin.blogs.edit', ['blog' => $blog, 'categories' => $categories, 'menus' => $menus]);
     }
 
 
@@ -88,7 +88,7 @@ class AdminBlogController extends Controller
     // 指定したIDブログの削除処理
     public function destroy($id)
     {
-        dd($id);
+        // dd($id);
         $blog = Blog::findOrFail($id);
         $blog->delete();
         Storage::disk('public')->delete($blog->image);

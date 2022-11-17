@@ -80,10 +80,10 @@
                             <label class="block text-sm font-medium mb-2">登場するねこ</label>
                             <select id="js-pulldown" class="mr-6 w-full" name="cats[]" multiple>
                                 <option value="">選択してください</option>
-                                @foreach ($cats as $cat)
+                                {{-- @foreach ($menus as $menu)
                                     <option value="{{ $cat->id }}" @if (in_array($cat->id, old('cats', $blog->cats->pluck('id')->all()))) selected @endif>
                                         {{ $cat->name }}</option>
-                                @endforeach
+                                @endforeach --}}
                             </select>
                         </div>
                     </div>

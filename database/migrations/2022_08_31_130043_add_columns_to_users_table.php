@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('image')->after('name')->comment('画像');
+            $table->string('image')->after('name')->nullable()->comment('画像');
             $table->string('introduction')->after('image')->comment('自己紹介文');
         });
     }
