@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminMenuController;
+use App\Http\Controllers\Admin\AdminNoticeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\ContactController;
@@ -54,6 +55,7 @@ Route::prefix('/admin')
                 // Route::post('/users', [UserController::class, 'store'])->name('users.store');
                 // メニュー
                 Route::resource('/menus', AdminMenuController::class)->except('show');
+                Route::resource('/notices', AdminNoticeController::class)->except('show');
             });
 
         // 未ログイン時にのみアクセス可能なルート
