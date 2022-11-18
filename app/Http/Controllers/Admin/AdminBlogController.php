@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Menu;
+use App\Models\User;
 
 class AdminBlogController extends Controller
 {
     // ブログ一覧画面
     public function index()
     {
-        // $blogs = Blog::all();
+
         $blogs = Blog::latest('updated_at')->simplePaginate(10);
         return view('admin.blogs.index', ['blogs' => $blogs,]);
     }
@@ -24,15 +25,22 @@ class AdminBlogController extends Controller
     // ブログ投稿画面
     public function create()
     {
-        return view('admin.blogs.create');
+        $users = User::select('id')->get();
+        $categories = Category::select('id', 'name')->get();
+        $menus = Menu::select('id', 'name')->get();
+        // dd($menus);
+        return view('admin.blogs.create', compact('categories', 'menus', 'users'));
     }
 
     // ブログ投稿処理
     public function store(StoreBlogRequest $request)
     {
+        // dd($request);
         $savedImagePath = $request->file('image')->store('blogs', 'public');
         $blog = new Blog($request->validated());
         $blog->image = $savedImagePath;
+        $blog->category_id = $request->category_id;
+        $blog->user_id = $request->user_id;
         $blog->save();
 
         return to_route('admin.blogs.index')->with('success', 'ブログを投稿しました');

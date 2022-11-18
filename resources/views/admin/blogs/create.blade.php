@@ -25,14 +25,15 @@
                                 </ul>
                             </div>
                         @endif
-
                         <!-- ▲▲▲▲エラーメッセージ▲▲▲▲　-->
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="title">タイトル</label>
                             <input id="title" class="block w-full px-4 py-3 mb-2 text-sm bg-white border rounded"
                                 type="text" name="title" value="{{ old('title') }}">
                         </div>
-
+                        @foreach ($users as $user )
+                        <input type="hidden" id="user_id" name="user_id" value="{{ $user->id }}">
+                        @endforeach
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="image">画像</label>
                             <div class="flex items-end">
@@ -52,13 +53,13 @@
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="category">カテゴリ</label>
                             <div class="flex">
-                                <select id="category"
+                                <select id="category_id"
                                     class="appearance-none block pl-4 pr-8 py-3 mb-2 text-sm bg-white border rounded"
-                                    name="">
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                    <option>Option 3</option>
-                                    <option>Option 4</option>
+                                    name="category_id">
+                                    <option value="" selected>選択してください</option>
+                                    @foreach ($categories as $category )
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
                                 <div
                                     class="pointer-events-none transform -translate-x-full flex items-center px-2 text-gray-500">
@@ -73,12 +74,11 @@
                         </div>
 
                         <div class="mb-6">
-                            <label class="block text-sm font-medium mb-2">登場するねこ</label>
-                            <select id="js-pulldown" class="mr-6 w-full" name="" multiple>
-                                <option selected>Option 1</option>
-                                <option>Option 2</option>
-                                <option selected>Option 3</option>
-                                <option>Option 4</option>
+                            <label class="block text-sm font-medium mb-2">登場する商品</label>
+                            <select id="js-pulldown" class="mr-6 w-full" name="name[]" multiple>
+                                @foreach ( $menus as $menu )
+                                <option value="{{ $menu->name }}">{{ $menu->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

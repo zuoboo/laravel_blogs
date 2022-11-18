@@ -16,10 +16,14 @@ class Blog extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
-    public function cats()
+    public function user()
     {
-        return $this->belongsToMany(Cat::class)->withTimestamps();
+        return $this->belongsTo(User::class);
+    }
+
+    public function menus()
+    {
+        return $this->belongsToMany(Menu::class)->withTimestamps();
 
     }
 }

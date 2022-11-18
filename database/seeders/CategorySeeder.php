@@ -17,10 +17,10 @@ class CategorySeeder extends Seeder
     {
         $now = now();
         DB::table('categories')->insert([
-            ['name' => '日常', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => '成長', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'グッズ', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'その他', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'バーガー', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'ドリンク', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'デザート', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'フライ', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }
