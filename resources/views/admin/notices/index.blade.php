@@ -28,7 +28,7 @@
                                     <p class="font-medium">{{ $notice->title }}</p>
                                 </td>
                                 <td class="font-medium">{{ config("category.$notice->category") }}</td>
-                                <td class="font-medium">{{ $notice->body }}</td>
+                                <td class="font-medium">{!! mb_substr(nl2br($notice->body), 0, 10) !!}</td>
                                 <td>{{ $notice->updated_at }}</td>
                                 <td>
                                     <div class="flex">

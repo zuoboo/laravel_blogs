@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Notice;
+use Carbon\Carbon;
 
 class NoticeController extends Controller
 {
@@ -16,7 +17,10 @@ class NoticeController extends Controller
     }
     public function show(Notice $notice) {
 
-        return view('notices.show', compact('notice'));
+        // dd($notice);
+        $date = $notice->updated_at->format('Y年m月d日');
+
+        return view('notices.show', compact('notice', 'date'));
 
     }
 }
