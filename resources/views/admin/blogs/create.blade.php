@@ -75,9 +75,9 @@
 
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2">登場する商品</label>
-                            <select id="js-pulldown" class="mr-6 w-full" name="name[]" multiple>
+                            <select id="js-pulldown" class="mr-6 w-full" name="menus[]" multiple>
                                 @foreach ( $menus as $menu )
-                                <option value="{{ $menu->name }}">{{ $menu->name }}</option>
+                                <option value="{{ $menu->id }}">{{ $menu->name }}</option>
                                 @endforeach
                             </select>
                         </div>

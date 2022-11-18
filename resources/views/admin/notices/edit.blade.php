@@ -4,13 +4,15 @@
     <section class="py-8">
         <div class="container px-4 mx-auto">
             <div class="py-4 bg-white rounded">
-                <form action="{{ route('admin.notices.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.notices.update', ['notice' => $notice->id]) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="flex px-6 pb-4 border-b">
-                        <h3 class="text-xl font-bold">お知らせ登録</h3>
+                        <h3 class="text-xl font-bold">お知らせ編集</h3>
                         <div class="ml-auto">
                             <button type="submit"
-                                class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">保存</button>
+                                class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">更新</button>
                         </div>
                     </div>
 
@@ -25,11 +27,12 @@
                                 </ul>
                             </div>
                         @endif
+
                         <!-- ▲▲▲▲エラーメッセージ▲▲▲▲　-->
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="title">タイトル</label>
                             <input id="title" class="block w-full px-4 py-3 mb-2 text-sm bg-white border rounded"
-                                type="text" name="title" value="{{ old('title') }}">
+                                type="text" name="title" value="{{ old('title', $notice->title) }}">
                         </div>
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="category">カテゴリ</label>
@@ -37,9 +40,10 @@
                                 <select id="category"
                                     class="appearance-none block pl-4 pr-8 py-3 mb-2 text-sm bg-white border rounded"
                                     name="category">
-                                    <option value="" selected>選択してください</option>
-                                    @foreach (Config('category') as $category_id => $category_name )
-                                    <option value="{{ $category_id }}">{{ $category_name }}</option>
+                                    @foreach (config('category') as $category_id => $category_name)
+                                        <option value="{{ $category_id }}"
+                                            {{ $notice->category == $category_id ? 'selected' : '' }}>{{ $category_name }}
+                                        </option>
                                     @endforeach
                                 </select>
                                 <div
@@ -53,10 +57,11 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="body">内容</label>
                             <textarea id="body" class="block w-full px-4 py-3 mb-2 text-sm bg-white border rounded" name="body"
-                                rows="5">{{ old('body') }}</textarea>
+                                rows="5">{{ old('body', $notice->body) }}</textarea>
                         </div>
                     </div>
                 </form>

@@ -40,7 +40,7 @@
                         </a>
                         <div class="flex justify-between">
                             <ul class="flex">
-                                <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1 px-2">＃ねこちゃん</li>
+                                <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1 px-2"></li>
                                 <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2 mr-2">＃ねこちゃん</li>
                                 <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2">＃ねこちゃん</li>
                             </ul>

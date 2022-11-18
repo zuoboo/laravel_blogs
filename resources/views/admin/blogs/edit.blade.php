@@ -58,7 +58,6 @@
                                 <select id="category"
                                     class="appearance-none block pl-4 pr-8 py-3 mb-2 text-sm bg-white border rounded"
                                     name="category_id">
-                                    <option value="">選択してください</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
                                             @if ($category->id == old('category_id', $blog->category_id)) selected @endif>{{ $category->name }}</option>
@@ -77,13 +76,13 @@
                         </div>
 
                         <div class="mb-6">
-                            <label class="block text-sm font-medium mb-2">登場するねこ</label>
-                            <select id="js-pulldown" class="mr-6 w-full" name="cats[]" multiple>
+                            <label class="block text-sm font-medium mb-2">登場する商品</label>
+                            <select id="js-pulldown" class="mr-6 w-full" name="menus[]" multiple>
                                 <option value="">選択してください</option>
-                                {{-- @foreach ($menus as $menu)
-                                    <option value="{{ $cat->id }}" @if (in_array($cat->id, old('cats', $blog->cats->pluck('id')->all()))) selected @endif>
-                                        {{ $cat->name }}</option>
-                                @endforeach --}}
+                                @foreach ($menus as $menu)
+                                    <option value="{{ $menu->id }}" @if (in_array($menu->id, old('menus', $blog->menus->pluck('id')->all()))) selected @endif>
+                                        {{ $menu->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -93,7 +92,7 @@
     </section>
 
     <script>
-        // ねこちゃんたち追加
+        // メニュー追加
         $('#js-pulldown').select2();
 
         // 画像プレビュー

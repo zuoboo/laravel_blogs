@@ -7,7 +7,7 @@
                 <h2 class="text-xl font-bold">お知らせ一覧</h2>
                 <div class="ml-auto">
                     <a href="/admin/notices/create"
-                        class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">新規投稿</a>
+                        class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">新規登録</a>
                 </div>
             </div>
             <div class="pt-4 px-4 overflow-x-auto">
@@ -27,7 +27,7 @@
                                 <td class="flex px-4 py-3 items-center">
                                     <p class="font-medium">{{ $notice->title }}</p>
                                 </td>
-                                <td class="font-medium">{{ $notice->category }}</td>
+                                <td class="font-medium">{{ config("category.$notice->category") }}</td>
                                 <td class="font-medium">{{ $notice->body }}</td>
                                 <td>{{ $notice->updated_at }}</td>
                                 <td>

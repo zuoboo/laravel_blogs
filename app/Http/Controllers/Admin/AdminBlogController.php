@@ -27,7 +27,8 @@ class AdminBlogController extends Controller
     {
         $users = User::select('id')->get();
         $categories = Category::select('id', 'name')->get();
-        $menus = Menu::select('id', 'name')->get();
+        // $menus = Menu::select('id', 'name')->get();
+        $menus = Menu::all();
         // dd($menus);
         return view('admin.blogs.create', compact('categories', 'menus', 'users'));
     }
@@ -36,12 +37,15 @@ class AdminBlogController extends Controller
     public function store(StoreBlogRequest $request)
     {
         // dd($request);
+
         $savedImagePath = $request->file('image')->store('blogs', 'public');
         $blog = new Blog($request->validated());
         $blog->image = $savedImagePath;
         $blog->category_id = $request->category_id;
         $blog->user_id = $request->user_id;
         $blog->save();
+        $blog->menus()->sync($request->menus);
+        // $blog->save();
 
         return to_route('admin.blogs.index')->with('success', 'ブログを投稿しました');
     }
@@ -72,6 +76,7 @@ class AdminBlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $updateData = $request->validated();
+        // dd($updateData);
 
         // 画像を変更する場合
         if($request->has('image')) {
@@ -81,7 +86,7 @@ class AdminBlogController extends Controller
             $updateData['image'] = $request->file('image')->store('blogs', 'public');
         }
         $blog->category()->associate($updateData['category_id']);
-        $blog->cats()->sync($updateData['cats']);
+        $blog->menus()->sync($updateData['menus']);
         $blog->update($updateData);
 
         return to_route('admin.blogs.index')->with('success', 'ブログを更新しました');
