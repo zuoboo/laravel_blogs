@@ -15,4 +15,9 @@ class Menu extends Model
     {
         return $this->belongsToMany(Blog::class)->withPivot('menu_id');
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

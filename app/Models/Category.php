@@ -13,4 +13,8 @@ class Category extends Model
     {
         return $this->hasMany(Blog::class);
     }
+    public function menus()
+    {
+        return $this->hasMany(Menu::class);
+    }
 }

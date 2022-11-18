@@ -83,7 +83,7 @@
     <section class="mt-24">
         <div class="container mx-auto">
             <p class="text-center text-2xl">ブログ</p>
-            <h2 class="mt-2 font-bold font-heading text-center text-3xl">ほぼ毎日お店でねこの様子をお届け！！</h2>
+            <h2 class="mt-2 font-bold font-heading text-center text-3xl">ほぼ毎日お店の様子をお届け！！</h2>
 
             <div class="my-8 pb-4 border-b">
                 <p class="text-lg text-left">カテゴリ / ねこちゃん</p>
@@ -103,9 +103,9 @@
                             <div class="relative h-52">
                                 <span
                                     class="absolute text-xs text-gray-400 px-2 border border-white bg-gray-100 uppercase py-2 px-10 left-0 bottom-0">{{ $blog->category->name}}</span>
-                                <a href="#"><img class="w-full h-56 object-cover"
+                                <a href=""><img class="w-full h-56 object-cover"
                                     src="{{ asset('storage/' . $blog->image) }}" alt=""></a>
-                                <time class="text-xs text-gray-500 text-right pr-2 pt-2">2022.3.12</time>
+                                <time class="block text-xs text-gray-500 text-right pt-1 pr-2">{{ $blog->created_at }}</time>
                             </div>
                             <div class="pt-2 pb-4 px-4">
                                 <a href="#">
@@ -127,7 +127,7 @@
                 @endforeach
             </div>
             <div class="mt-8 text-center">
-                <a href="#"
+                <a href="/blogs"
                     class="inline-block text-xs text-white font-semibold leading-none rounded py-4 text-blue-500 border-solid bg-white border-blue-500 border-2 px-16 hover:text-white hover:bg-blue-500">もっと見る</a>
             </div>
         </div>
