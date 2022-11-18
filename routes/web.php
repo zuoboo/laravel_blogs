@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\NoticeController;
 use Database\Seeders\BlogSeeder2;
 use Illuminate\Support\Facades\Route;
 

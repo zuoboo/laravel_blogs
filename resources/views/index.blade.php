@@ -66,31 +66,13 @@
         <h2 class="mt-2 font-bold font-heading text-center text-3xl">営業時間や新メンバーなど様々な情報をお届け</h2>
 
         <ul class="mt-8">
+            @foreach ($notices as $notice )
             <li class="flex py-4 border-t border-b">
-                <p class="font-bold w-40">2022. 3. 4（水）</p>
-                <p class="bg-gray-100 text-gray-400 px-3">カテゴリ</p><a href="#"
-                    class="ml-4 text-blue-500">キャットフードなどの販売をはじめました</a>
+                <p class="font-bold w-40">{{ $notice->updated_at }}</p>
+                <p class="bg-gray-100 text-gray-400 p-3">{{ config("category.$notice->category") }}</p><a href="#"
+                    class="ml-4 text-blue-500">{{ $notice->body }}</a>
             </li>
-            <li class="flex py-4 border-b">
-                <p class="font-bold w-40">2022. 2. 14（水）</p>
-                <p class="bg-gray-100 text-gray-400 px-3">カテゴリ</p><a href="#"
-                    class="ml-4 text-blue-500">『ノア』ちゃん新しく加入しました！</a>
-            </li>
-            <li class="flex py-4 border-b">
-                <p class="font-bold w-40">2022. 3. 4（水）</p>
-                <p class="bg-gray-100 text-gray-400 px-3">カテゴリ</p><a href="#"
-                    class="ml-4 text-blue-500">貸し切りご予約のため3/20は12:00~の営業となります</a>
-            </li>
-            <li class="flex py-4 border-b">
-                <p class="font-bold w-40">2022. 3. 4（水）</p>
-                <p class="bg-gray-100 text-gray-400 px-3">カテゴリ</p><a href="#"
-                    class="ml-4 text-blue-500">『●●●●』に、当店が紹介されました</a>
-            </li>
-            <li class="flex py-4 border-b">
-                <p class="font-bold w-40">2022. 3. 4（水）</p>
-                <p class="bg-gray-100 text-gray-400 px-3">カテゴリ</p><a href="#"
-                    class="ml-4 text-blue-500">サイト開設しました！！</a>
-            </li>
+            @endforeach
         </ul>
         <div class="mt-8 text-center">
             <a href="#"
@@ -133,7 +115,7 @@
                                 </a>
                                 <div class="flex justify-between">
                                     <ul class="flex">
-                                        <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1 px-2">＃ねこちゃん</li>
+                                        {{-- <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1 px-2">{{ $blog->pivot->menu_id }}</li> --}}
                                         <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2 mr-2">＃ねこちゃん</li>
                                         <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2">＃ねこちゃん</li>
                                     </ul>

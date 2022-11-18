@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Notice;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -91,7 +92,8 @@ class BlogController extends Controller
     public function top()
     {
         $blogs = Blog::paginate(3);
-
-        return view('index', compact('blogs'));
+        $notices = Notice::paginate(5);
+        // $blogs = Blog::all();
+        return view('index', compact('blogs', 'notices'));
     }
 }

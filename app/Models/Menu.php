@@ -13,6 +13,6 @@ class Menu extends Model
 
     public function blogs()
     {
-        return $this->belongsToMany(Blog::class);
+        return $this->belongsToMany(Blog::class)->withPivot('menu_id');
     }
 }

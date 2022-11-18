@@ -23,7 +23,7 @@ class Blog extends Model
 
     public function menus()
     {
-        return $this->belongsToMany(Menu::class)->withTimestamps();
+        return $this->belongsToMany(Menu::class)->withPivot('menu_id')->withTimestamps();
 
     }
 }
