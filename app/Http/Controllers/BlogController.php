@@ -49,9 +49,12 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
-    {
-        //
+    public function show(Blog $blog) {
+
+        $blogs = Blog::all();
+        $user_name = $blog->user->name;
+        return view('blogs.show', compact('blog', 'blogs', 'user_name'));
+
     }
 
     /**

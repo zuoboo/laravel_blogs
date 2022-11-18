@@ -31,6 +31,7 @@ Route::get('/', [BlogController::class, 'top'])->name('index');
 
 // ブログ一覧画面
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
+Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
 // メニュー一覧画面
 Route::get('/menus', [MenuController::class, 'index'])->name('menus');
 // お知らせ一覧画面

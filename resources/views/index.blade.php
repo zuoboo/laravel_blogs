@@ -68,9 +68,9 @@
         <ul class="mt-8">
             @foreach ($notices as $notice )
             <li class="flex py-4 border-t border-b">
-                <p class="font-bold w-40">{{ $notice->updated_at }}</p>
+                <p class="font-bold w-40">{{ $notice->updated_at->format('Y年m月d日') }}</p>
                     <div class="text-center bg-gray-100 text-gray-400 py-3 px-4 w-40">{{ config("category.$notice->category") }}</div>
-                    <a href="#" class="ml-4 text-blue-500">{{ $notice->title }}</a>
+                    <a href="{{ route('notices.show', ['notice' => $notice->id ])}}" class="ml-4 text-blue-500">{{ $notice->title }}</a>
             </li>
             @endforeach
         </ul>

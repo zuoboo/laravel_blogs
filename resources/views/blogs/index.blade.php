@@ -4,7 +4,7 @@
 @section('content')
     <section class="bg-gray-100 pt-2">
         <div class="container mx-auto">
-            <p class="text-left px-4 pt-2 text-gray-400"><a href="#" class="text-blue-600 hover:underline">ホーム</a><span
+            <p class="text-left px-4 pt-2 text-gray-400"><a href="/" class="text-blue-600 hover:underline">ホーム</a><span
                     class="px-2">&gt</span>ブログ</p>
             <p class="text-center pt-10 text-2xl">ブログ</p>
             <h1 class="mt-2 text-4xl font-bold font-heading text-center h-32">ほぼ毎日お店の情報をお届け！</h1>
@@ -32,7 +32,7 @@
                             <div class="relative h-52">
                                 <span
                                     class="py-2 px-10 mt-56 absolute left-0 bottom-0 text-xs text-gray-400 px-2 border border-white bg-gray-100 uppercase">{{ $blog->category->name }}</span>
-                                <a href=""><img class="w-full h-56 object-cover"
+                                <a href="{{ route('blogs.show', ['blog' => $blog->id ])}}"><img class="w-full h-56 object-cover"
                                         src="{{ asset('storage/' . $blog->image) }}" alt=""></a>
                                 <time
                                     class="block text-xs text-gray-500 text-right pt-1 pr-2">{{ $blog->created_at }}</time>
