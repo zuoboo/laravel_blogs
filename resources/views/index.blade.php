@@ -121,8 +121,8 @@
                             <div class="relative h-52">
                                 <span
                                     class="absolute text-xs text-gray-400 px-2 border border-white bg-gray-100 uppercase py-2 px-10 left-0 bottom-0">{{ $blog->category->name}}</span>
-                                <a href="#"><img class="w-full h-full object-cover"
-                                        src="/images/placeholders/blogs/lunch.jpeg" alt=""></a>
+                                <a href="#"><img class="w-full h-56 object-cover"
+                                    src="{{ asset('storage/' . $blog->image) }}" alt=""></a>
                                 <time class="text-xs text-gray-500 text-right pr-2 pt-2">2022.3.12</time>
                             </div>
                             <div class="pt-2 pb-4 px-4">
@@ -137,7 +137,7 @@
                                         <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2 mr-2">＃ねこちゃん</li>
                                         <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2">＃ねこちゃん</li>
                                     </ul>
-                                    <p class="font-medium font-semibold">店長</p>
+                                    <p class="font-medium font-semibold">{{ $blog->user->name }}</p>
                                 </div>
                             </div>
                         </div>

@@ -44,7 +44,7 @@
                                 <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2 mr-2">＃ねこちゃん</li>
                                 <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2">＃ねこちゃん</li>
                             </ul>
-                            <p class="font-medium font-semibold">店長</p>
+                            <p class="font-medium font-semibold">{{ $blog->user->name }}</p>
                         </div>
                     </div>
                 </div>

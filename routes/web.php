@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MenuController;
 use Database\Seeders\BlogSeeder2;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Route::get('/', [BlogController::class, 'top'])->name('index');
 
 // ブログ一覧画面
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
+// メニュー一覧画面
+Route::get('/menus', [MenuController::class, 'index'])->name('menus');
 
 
 

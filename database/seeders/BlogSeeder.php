@@ -17,7 +17,7 @@ class BlogSeeder extends Seeder
     public function run()
     {
         // ダミー記事生成件数
-        $num = 150;
+        $num = 10;
 
         $insertData = array_map(
             function($no) use($num) {

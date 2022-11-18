@@ -19,7 +19,7 @@
             <a class="text-3xl font-semibold leading-none" href="/">葵CAFE</a>
             <ul class="hidden lg:flex ml-12 mr-auto space-x-12">
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="/blogs">ブログ</a></li>
-                <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">メニュー</a></li>
+                <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="/menus">メニュー</a></li>
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">よくあるご質問</a></li>
             </ul>
             <div>
