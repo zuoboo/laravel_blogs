@@ -103,12 +103,12 @@
                             <div class="relative h-52">
                                 <span
                                     class="absolute text-xs text-gray-400 px-2 border border-white bg-gray-100 uppercase py-2 px-10 left-0 bottom-0">{{ $blog->category->name}}</span>
-                                <a href=""><img class="w-full h-56 object-cover"
+                                <a href="{{ route('blogs.show', ['blog' => $blog->id ])}}"><img class="w-full h-56 object-cover"
                                     src="{{ asset('storage/' . $blog->image) }}" alt=""></a>
                                 <time class="block text-xs text-gray-500 text-right pt-1 pr-2">{{ $blog->created_at }}</time>
                             </div>
                             <div class="pt-2 pb-4 px-4">
-                                <a href="#">
+                                <a href="{{ route('blogs.show', ['blog' => $blog->id ])}}">
                                     <h1 class="mb-2 text-2xl font-semibold font-heading text-left">{{ $blog->title }}</h1>
                                     <p class="mb-6 text-gray-500 leading-relaxed text-left truncate">
                                         {{ mb_substr($blog->body, 0, 15) }}</p>
