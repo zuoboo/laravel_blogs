@@ -67,4 +67,15 @@ class AdminMenuController extends Controller
 
         return to_route('admin.menus.index')->with('success', 'メニューを更新しました');
     }
+
+        // 指定したIDメニューの削除処理
+        public function destroy($id)
+        {
+            // dd($id);
+            $blog = Menu::findOrFail($id);
+            $blog->delete();
+            Storage::disk('public')->delete($blog->image);
+
+            return to_route('admin.menus.index')->with('success', 'ブログを削除しました');
+        }
 }
