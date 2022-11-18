@@ -33,6 +33,8 @@ Route::get('/', [BlogController::class, 'top'])->name('index');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 // メニュー一覧画面
 Route::get('/menus', [MenuController::class, 'index'])->name('menus');
+// お知らせ一覧画面
+Route::resource('/notices', NoticeController::class)->except('edit','store','update','create','destroy');
 
 
 

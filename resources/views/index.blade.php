@@ -63,19 +63,19 @@
 
     <section class="mt-24 container mx-auto">
         <p class="text-center text-2xl">お知らせ</p>
-        <h2 class="mt-2 font-bold font-heading text-center text-3xl">営業時間や新メンバーなど様々な情報をお届け</h2>
+        <h2 class="mt-2 font-bold font-heading text-center text-3xl">営業時間や定休日などの情報をお知らせ</h2>
 
         <ul class="mt-8">
             @foreach ($notices as $notice )
             <li class="flex py-4 border-t border-b">
                 <p class="font-bold w-40">{{ $notice->updated_at }}</p>
-                <p class="bg-gray-100 text-gray-400 p-3">{{ config("category.$notice->category") }}</p><a href="#"
-                    class="ml-4 text-blue-500">{{ $notice->body }}</a>
+                    <div class="text-center bg-gray-100 text-gray-400 py-3 px-4 w-40">{{ config("category.$notice->category") }}</div>
+                    <a href="#" class="ml-4 text-blue-500">{{ $notice->title }}</a>
             </li>
             @endforeach
         </ul>
         <div class="mt-8 text-center">
-            <a href="#"
+            <a href="/notices"
                 class="inline-block text-xs text-white font-semibold leading-none rounded py-4 text-blue-500 border-solid bg-white border-blue-500 border-2 px-16 hover:text-white hover:bg-blue-500">もっと見る</a>
         </div>
     </section>
