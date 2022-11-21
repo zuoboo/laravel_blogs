@@ -86,14 +86,11 @@
             <h2 class="mt-2 font-bold font-heading text-center text-3xl">ほぼ毎日お店の様子をお届け！！</h2>
 
             <div class="my-8 pb-4 border-b">
-                <p class="text-lg text-left">カテゴリ / ねこちゃん</p>
+                <p class="text-lg text-left">カテゴリ</p>
                 <ul class="flex text-center pt-2">
-                    <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3">カテゴリ</li>
-                    <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">カテゴリ</a></li>
-                    <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">カテゴリ</a></li>
-                    <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">＃ねこちゃん</a></li>
-                    <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">＃ねこちゃん</a></li>
-                    <li class="bg-gray-100 text-gray-400 py-1 px-3"><a href="#">＃ねこちゃん</a></li>
+                    @foreach($categories as $category)
+                    <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">{{ $category->name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="flex flex-wrap -mx-3">
@@ -115,11 +112,11 @@
                                 </a>
                                 <div class="flex justify-between">
                                     <ul class="flex">
-                                        {{-- <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1 px-2">{{ $blog->pivot->menu_id }}</li> --}}
-                                        <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2 mr-2">＃ねこちゃん</li>
-                                        <li class="bg-gray-100 text-gray-400 text-xs py-1 px-2">＃ねこちゃん</li>
+                                        @foreach ($blog->menus as $menu)
+                                        <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1">{{ $menu->name }}</li>
+                                        @endforeach
+                                        <p class="font-medium font-semibold">{{ $blog->user->name }}</p>
                                     </ul>
-                                    <p class="font-medium font-semibold">{{ $blog->user->name }}</p>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +136,7 @@
             <h2 class="mt-2 font-bold font-heading text-center text-3xl h-24">ご来店をお待ちしております！</h2>
             <div class="md:flex justify-center">
                 <div class="">
-                    <img class="rounded mx-auto" src="/images/map.jpg" alt="">
+                    <img class="border border-solid-500 rounded mx-auto" src="/images/map.png" alt="">
                 </div>
                 <div class="text-left lg:ml-8 px-8">
                     <p class="font-bold text-3xl pb-5">葵CAFE</p>

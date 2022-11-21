@@ -60,7 +60,7 @@
     </section>
 
     <script>
-        // ねこちゃんたち追加
+
         $('#js-pulldown').select2();
 
         // 画像プレビュー

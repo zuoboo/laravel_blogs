@@ -18,6 +18,7 @@ class ContactController extends Controller
 
         // これ以降の行は入力エラーがなかった場合のみ実行されます
         // 登録処理(実際はメール送信などを行う)
+        // 確認はmailHogで行う(localhost:8025)
         Mail::to('nsnxn1022@gmail.com')->send(new ContactAdminMail($validated));
         return to_route('contact.complete');
     }

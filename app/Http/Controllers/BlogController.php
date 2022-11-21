@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Notice;
+use App\Models\Menu;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,11 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::paginate(15);
+        $menus = Menu::all();
+        $categories = Category::all();
 
 
-        return view('blogs.index', compact('blogs'));
+        return view('blogs.index', compact('blogs', 'categories', 'menus'));
     }
 
     /**
@@ -53,7 +56,9 @@ class BlogController extends Controller
 
         $blogs = Blog::all();
         $user_name = $blog->user->name;
-        return view('blogs.show', compact('blog', 'blogs', 'user_name'));
+        $menus = Menu::all();
+        $categories = Category::all();
+        return view('blogs.show', compact('blog', 'blogs', 'user_name', 'menus', 'categories'));
 
     }
 
@@ -95,8 +100,10 @@ class BlogController extends Controller
     public function top()
     {
         $blogs = Blog::paginate(3);
-        $notices = Notice::paginate(5);
+        $notices = Notice::paginate(3);
+        $menus = Menu::all();
+        $categories = Category::all();
         // $blogs = Blog::all();
-        return view('index', compact('blogs', 'notices'));
+        return view('index', compact('blogs', 'notices', 'menus', 'categories'));
     }
 }

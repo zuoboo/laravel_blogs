@@ -20,6 +20,9 @@
                 </li>
                 @endforeach
             </ul>
+            <div class="mt-4">
+                {{ $notices->links() }}
+            </div>
         </div>
     </section>
 @endsection

@@ -10,7 +10,7 @@ class NoticeController extends Controller
 {
     public function index()
     {
-        $notices = Notice::all();
+        $notices = Notice::paginate(5);
 
 
         return view('notices.index', compact('notices'));

@@ -55,7 +55,6 @@
             <li class="ml-6"><a href="/#access" class="hover:underline">アクセス</a></li>
             <li class="ml-6"><a href="#" class="hover:underline">よくあるご質問</a></li>
             <li class="ml-6"><a href="/contact" class="hover:underline">お問い合わせ</a></li>
-            <li class="ml-6"><a href="#" class="hover:underline">プライバシーポリシー</a></li>
         </ul>
     </div>
 </footer>
