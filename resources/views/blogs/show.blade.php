@@ -80,10 +80,6 @@
                     @endif
                 @endforeach
             </div>
-            <div class="mt-8 text-center">
-                <a href="#"
-                    class="inline-block text-xs text-white font-semibold leading-none rounded py-4 text-blue-500 border-solid bg-white border-blue-500 border-2 px-16 hover:text-white hover:bg-blue-500">もっと見る</a>
-            </div>
         </div>
     </section>
 @endsection
