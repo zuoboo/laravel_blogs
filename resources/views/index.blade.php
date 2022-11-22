@@ -4,7 +4,7 @@
 @section('content')
     <section class="bg-gray-100">
         <div class="container mx-auto py-40 relative">
-            <h1 class="mt-2 text-4xl font-bold font-heading text-center">葵CAFEで至福のひとときを過ごしませんか？</h1>
+            <h1 class="mt-2 text-4xl font-bold font-heading text-center">OZCAFEで至福のひとときを過ごしませんか？</h1>
             <p class="text-center pt-5">季節に合ったメニューをご用意し、<br>
                 皆様のご来店をお待ちしております。<br>
                 </p>
@@ -61,7 +61,7 @@
         </div>
     </section>
 
-    <section class="mt-24 container mx-auto">
+    <section class="mt-16 container mx-auto">
         <p class="text-center text-2xl">お知らせ</p>
         <h2 class="mt-2 font-bold font-heading text-center text-3xl">営業時間や定休日などの情報をお知らせ</h2>
 
@@ -80,18 +80,18 @@
         </div>
     </section>
 
-    <section class="mt-24">
+    <section class="mt-16">
         <div class="container mx-auto">
             <p class="text-center text-2xl">ブログ</p>
             <h2 class="mt-2 font-bold font-heading text-center text-3xl">ほぼ毎日お店の様子をお届け！！</h2>
 
             <div class="my-8 pb-4 border-b">
-                <p class="text-lg text-left">カテゴリ</p>
+                {{-- <p class="text-lg text-left">カテゴリ</p>
                 <ul class="flex text-center pt-2">
                     @foreach($categories as $category)
                     <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">{{ $category->name }}</a></li>
                     @endforeach
-                </ul>
+                </ul> --}}
             </div>
             <div class="flex flex-wrap -mx-3">
                 @foreach ($blogs as $blog)
@@ -139,13 +139,13 @@
                     <img class="border border-solid-500 rounded mx-auto" src="/images/map.png" alt="">
                 </div>
                 <div class="text-left lg:ml-8 px-8">
-                    <p class="font-bold text-3xl pb-5">葵CAFE</p>
+                    <p class="font-bold text-3xl pb-5">OZCAFE</p>
                     <dl>
                         <dt class="text-xl font-medium">営業時間</dt>
                         <dd class="pl-12 text-lg"><span class="mr-6">平日</span>11:30〜16:00<span class="ml-6"></span></dd>
                         <dd class="pl-12 text-lg"><span class="mr-1">土日祝 </span>11:00〜16:30<span class="ml-6"></span></dd>
                         <dt class="mt-5 text-xl font-medium">住所</dt>
-                        <dd class="text-lg pl-12">〒795-0012<br>愛媛県大洲市大洲392</dd>
+                        <dd class="text-lg pl-12">〒795-0012<br>愛媛県大洲市大洲</dd>
                         <dt class="mt-5 text-xl font-medium">最寄り駅から</dt>
                         <dd class="pl-12 text-lg">伊予大洲駅<span class="ml-6">徒歩10分</span></dd>
                     </dl>
@@ -156,7 +156,6 @@
         <div class="flex mx-auto bg-white py-4 mt-10 md:w-192">
             <div class="text-left mx-auto">
                 <p class="text-lg">なにかあればお気軽にお問い合わせください！</p>
-                <p><a href="#" class="text-blue-600 hover:underline">よくあるご質問</a>もご用意しています</p>
             </div>
             <div class="mx-auto">
                 <a href="/contact"

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <title>@yield('title', '葵CAFE')</title>
+    <title>@yield('title', 'OZCAFE')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -16,12 +16,11 @@
 <header>
     <div class="container px-4 mx-auto">
         <nav class="flex items-center justify-between py-6">
-            <a class="text-3xl font-semibold leading-none" href="/">葵CAFE</a>
+            <a class="text-3xl font-semibold leading-none" href="/">OZCAFE</a>
             <ul class="hidden lg:flex ml-12 mr-auto space-x-12">
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="/blogs">ブログ</a></li>
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="/menus">メニュー</a></li>
                 <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="/notices">お知らせ</a></li>
-                <li><a class="text-sm text-blueGray-400 hover:text-blueGray-500" href="#">よくあるご質問</a></li>
             </ul>
             <div>
                 <a class="mr-2 inline-block px-4 py-3 text-xs text-blue-500 hover:text-blue-600 leading-none border border-blue-200 hover:border-blue-300 rounded" href="/contact">お問い合わせ</a>
@@ -42,10 +41,10 @@
 <footer class="bg-black">
     <div class="px-4 container mx-auto p-10 flex justify-between">
         <div class="text-white text-left">
-            <h2 class="text-xl font-semibold">葵CAFE</h2>
+            <h2 class="text-xl font-semibold">OZCAFE</h2>
             <p>〒795-0012</p>
-            <p>愛媛県大洲市大洲392</p>
-            <p>070-2223-0123</p>
+            <p>愛媛県大洲市大洲</p>
+            <p>000-1111-2222</p>
 
         </div>
 
@@ -53,7 +52,6 @@
             <li class="ml-6"><a href="/" class="hover:underline">ホーム</a></li>
             <li class="ml-6"><a href="/blogs" class="hover:underline">ブログ</a></li>
             <li class="ml-6"><a href="/#access" class="hover:underline">アクセス</a></li>
-            <li class="ml-6"><a href="#" class="hover:underline">よくあるご質問</a></li>
             <li class="ml-6"><a href="/contact" class="hover:underline">お問い合わせ</a></li>
         </ul>
     </div>

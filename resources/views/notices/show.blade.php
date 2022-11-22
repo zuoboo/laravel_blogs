@@ -13,7 +13,7 @@
             <ul class="mt-8">
                 <li class="flex py-4 border-t border-b">
                         <a class="ml-4">{!! nl2br($notice->body) !!}<br><br>
-                        葵CAFEオーナー</a>
+                        OZCAFEオーナー</a>
                 </li>
             </ul>
         </div>

@@ -14,12 +14,12 @@
     <section class="pb-24">
         <div class="container px-4 mx-auto">
             <div class="my-8 pb-4 border-b">
-                <p class="text-lg text-left">カテゴリ</p>
+                {{-- <p class="text-lg text-left">カテゴリ</p>
                 <ul class="flex text-center pt-2">
                     @foreach($categories as $category)
                     <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">{{ $category->name }}</a></li>
                     @endforeach
-                </ul>
+                </ul> --}}
             </div>
 
             <div class="flex flex-wrap -mx-3">
@@ -32,7 +32,7 @@
                                 <a href="{{ route('blogs.show', ['blog' => $blog->id ])}}"><img class="w-full h-56 object-cover"
                                         src="{{ asset('storage/' . $blog->image) }}" alt=""></a>
                                 <time
-                                    class="block text-xs text-gray-500 text-right pt-1 pr-2">{{ $blog->created_at }}</time>
+                                    class="block text-xs text-gray-500 text-right pt-1 pr-2">{{ $blog->created_at->format('Y年m月d日') }}</time>
                             </div>
                             <div class="pt-2 pb-4 px-4">
                                 <a href="#">

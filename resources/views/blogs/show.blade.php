@@ -14,12 +14,12 @@
     <section>
         <div class="container mx-auto">
             <div class="my-8 pb-4 border-b">
-                <p class="text-lg text-left">カテゴリ</p>
+                {{-- <p class="text-lg text-left">カテゴリ</p>
                 <ul class="flex text-center pt-2">
                     @foreach($categories as $category)
                     <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">{{ $category->name }}</a></li>
                     @endforeach
-                </ul>
+                </ul> --}}
             </div>
             <div>
                 <img class="mb-12 rounded object-cover mx-auto" src="{{ asset('storage/' . $blog->image) }}" alt="">
