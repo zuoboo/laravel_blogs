@@ -19,10 +19,10 @@
                     <input id="name_kana" class="block w-96 max-w-full px-4 py-3 mb-2 text-sm text-gray-500 border rounded" type="text" disabled value="{{ $contact->name_kana }}">
                 </div>
 
-                {{-- <div class="mb-6">
+                <div class="mb-6">
                     <label class="block text-sm font-medium mb-2" for="phone">電話番号</label>
                     <input id="phone" class="block w-96 max-w-full px-4 py-3 mb-2 text-sm text-gray-500 border rounded" type="text" disabled value="{{ $contact->phone }}">
-                </div> --}}
+                </div>
 
                 <div class="mb-6">
                     <label class="block text-sm font-medium mb-2" for="email">メールアドレス</label>

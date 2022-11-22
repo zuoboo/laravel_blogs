@@ -48,12 +48,12 @@
                             class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border"
                             type="text" placeholder="例）タナカタロウ" name="name_kana" value="{{ old('name_kana') }}">
                     </div>
-                    {{-- <div class="mb-4">
+                    <div class="mb-4">
                         <label for="phone" class="block text-left p-1 my-1 font-medium">電話番号</label>
                         <input id="phone"
                             class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border"
-                            type="text" placeholder="例）0312345678" name="phone" value="{{ old('phone') }}">
-                    </div> --}}
+                            type="tel" placeholder="例）0312345678" name="phone" value="{{ old('phone') }}">
+                    </div>
                     <div class="mb-4">
                         <label for="email" class="block text-left p-1 my-1 font-medium">メールアドレス<span
                                 class="text-white text-xs bg-yellow-400 mx-2 py-1 px-2">必須</span></label>

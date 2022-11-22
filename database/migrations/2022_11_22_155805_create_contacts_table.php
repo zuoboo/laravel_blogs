@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('name_kana');
-            // $table->string('phone');
+            $table->string('phone');
             $table->string('email');
             $table->text('body');
             $table->timestamps();
