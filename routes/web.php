@@ -43,6 +43,9 @@ Route::resource('/notices', NoticeController::class)->except('edit','store','upd
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'sendMail']);
 Route::get('/contact/complete', [ContactController::class, 'complete'])->name('contact.complete');
+Route::get('/admin/contacts', [ContactController::class, 'top'])->name('admin.contacts.index');
+Route::get('/admin/contacts/{contact}', [ContactController::class, 'detail'])->name('admin.contacts.detail');
+Route::delete('/admin/contacts/{contact}', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
 
 // 管理画面
 Route::prefix('/admin')

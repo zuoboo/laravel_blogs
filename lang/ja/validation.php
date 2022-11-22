@@ -140,6 +140,11 @@ return [
         'email' => 'メールアドレス',
         'body' => '本文',
         'title' => 'タイトル',
-        'category' => 'カテゴリ'
+        'category' => 'カテゴリ',
+        'password' => 'パスワード',
+        'image' => '画像',
+        'price' => '価格',
+        'introduction' => '紹介文',
+        
     ]
 ];

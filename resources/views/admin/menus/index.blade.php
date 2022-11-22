@@ -7,7 +7,7 @@
                 <h2 class="text-xl font-bold">メニュー一覧</h2>
                 <div class="ml-auto">
                     <a href="/admin/menus/create"
-                        class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">新規投稿</a>
+                        class="py-2 px-3 text-xs text-white font-semibold bg-indigo-500 rounded-md">新規登録</a>
                 </div>
             </div>
             <div class="pt-4 px-4 overflow-x-auto">
