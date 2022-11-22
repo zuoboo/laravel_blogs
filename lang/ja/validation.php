@@ -145,6 +145,8 @@ return [
         'image' => '画像',
         'price' => '価格',
         'introduction' => '紹介文',
+        'category_id' => 'カテゴリ',
         
+
     ]
 ];

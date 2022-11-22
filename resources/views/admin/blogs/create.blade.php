@@ -25,15 +25,13 @@
                                 </ul>
                             </div>
                         @endif
-                        <!-- ▲▲▲▲エラーメッセージ▲▲▲▲　-->
+                        <!-- ▲▲▲▲エラーメッセージ▲▲▲▲ -->
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="title">タイトル</label>
                             <input id="title" class="block w-full px-4 py-3 mb-2 text-sm bg-white border rounded"
                                 type="text" name="title" value="{{ old('title') }}">
                         </div>
-                        @foreach ($users as $user )
                         <input type="hidden" id="user_id" name="user_id" value="{{ $user->id }}">
-                        @endforeach
                         <div class="mb-6">
                             <label class="block text-sm font-medium mb-2" for="image">画像</label>
                             <div class="flex items-end">

@@ -11,6 +11,7 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Menu;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AdminBlogController extends Controller
 {
@@ -25,12 +26,13 @@ class AdminBlogController extends Controller
     // ブログ投稿画面
     public function create()
     {
-        $users = User::select('id')->get();
+        // $users = User::select('id')->get();
+        $user = Auth::user();
         $categories = Category::select('id', 'name')->get();
         // $menus = Menu::select('id', 'name')->get();
         $menus = Menu::all();
         // dd($menus);
-        return view('admin.blogs.create', compact('categories', 'menus', 'users'));
+        return view('admin.blogs.create', compact('categories', 'menus', 'user'));
     }
 
     // ブログ投稿処理
