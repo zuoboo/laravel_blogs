@@ -50,11 +50,11 @@
 
         </div>
 
-        <ul class="text-white text-left hidden md:flex flex-wrap flex-col h-12 md:w-128">
+        <ul class="text-white text-left md:flex flex-wrap flex-col h-12 md:w-128">
             <li class="ml-6"><a href="/" class="hover:underline">ホーム</a></li>
             <li class="ml-6"><a href="/blogs" class="hover:underline">ブログ</a></li>
-            <li class="ml-6"><a href="/#access" class="hover:underline">アクセス</a></li>
-            <li class="ml-6"><a href="/contact" class="hover:underline">お問い合わせ</a></li>
+            <li class="ml-6"><a href="/menus" class="hover:underline">メニュー</a></li>
+            <li class="ml-6"><a href="/notices" class="hover:underline">お知らせ</a></li>
         </ul>
     </div>
 </footer>
