@@ -2,22 +2,51 @@
 @section('title', 'トップページ')
 
 @section('content')
-    <section class="bg-gray-100">
-        <div class="container mx-auto py-40 relative">
-            <h1 class="mt-2 text-4xl font-bold font-heading text-center">OZCAFEで至福のひとときを過ごしませんか？</h1>
-            <p class="text-center pt-5">季節に合ったメニューをご用意し、<br>
-                皆様のご来店をお待ちしております。<br>
-                </p>
-            <div class="absolute right-0 bottom-0 transform translate-y-16 w-40">
-                <a href="#"><img src="/images/index/food.png" alt="" class="shadow-lg"></a>
+    <section>
+        <div id="global-container">
+            <div id="container">
+                <div id="content">
+                    <div class="hero">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="hero__title">Pork Grill Burger</div>
+                                    <img src="images//index/pork.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="hero__title">BLT sand</div>
+                                    <img src="images//index/blt.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="hero__title">Fried Chicken</div>
+                                    <img src="images/index/flied.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="hero__title">Hamokatsu Burger</div>
+                                    <img src="images/index/hamokatu.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="hero__footer">
+                                <img class="hero__downarrow" src="images/index/arrow.svg">
+                                <span class="hero__scrolltext">scroll</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <script src="/css/animate/swiper-bundle.min.js"></script>
+        <script src="/css/animate/hero-slider.js"></script>
+        <script src="/css/animate/main.js"></script>
     </section>
+
 
     <section class="mt-16">
         <div class="container mx-auto">
-            <p class="text-center text-2xl">特徴</p>
-            <h2 class="mt-2 font-bold font-heading text-center text-3xl">安心して楽しんで頂くための3つの徹底ポイント</h2>
+            <h2 class="mt-2 font-bold font-heading text-center text-3xl">OZCAFEで至福のひとときを過ごしませんか？</h2>
+            <p class="text-center">季節に合ったメニューをご用意し皆様のご来店をお待ちしております。<br>
+                安心して楽しんで頂くため、以下3つのポイントを徹底の上、営業いたします。
+
         </div>
 
         <div class="flex flex-wrap -m-3 container mx-auto pt-8">
@@ -49,8 +78,7 @@
             <div class="w-full lg:w-1/3 p-3">
                 <div class="bg-gray-100 rounded shadow">
                     <div class="flex py-10 px-6">
-                        <img class="w-20 h-20 object-cover rounded-full" src="/images/index/terasu.png"
-                            alt="">
+                        <img class="w-20 h-20 object-cover rounded-full" src="/images/index/terasu.png" alt="">
                         <div class="ml-4 w-56">
                             <h3 class="mb-1 text-2xl font-heading text-left text-blue-500">広々とした空間</h3>
                             <p class="text-left text-gray-500 text-sm">テラス席をご用意してお待ちしております！<br><br></p>
@@ -66,12 +94,14 @@
         <h2 class="mt-2 font-bold font-heading text-center text-3xl">営業時間や定休日などの情報をお知らせ</h2>
 
         <ul class="mt-8">
-            @foreach ($notices as $notice )
-            <li class="flex py-4 border-t border-b">
-                <p class="font-bold w-40">{{ $notice->updated_at->format('Y年m月d日') }}</p>
-                    <div class="text-center bg-gray-100 text-gray-400 py-3 px-4 w-40">{{ config("category.$notice->category") }}</div>
-                    <a href="{{ route('notices.show', ['notice' => $notice->id ])}}" class="ml-4 text-blue-500">{{ $notice->title }}</a>
-            </li>
+            @foreach ($notices as $notice)
+                <li class="flex py-4 border-t border-b">
+                    <p class="font-bold w-40">{{ $notice->updated_at->format('Y年m月d日') }}</p>
+                    <div class="text-center bg-gray-100 text-gray-400 py-3 px-4 w-40">
+                        {{ config("category.$notice->category") }}</div>
+                    <a href="{{ route('notices.show', ['notice' => $notice->id]) }}"
+                        class="ml-4 text-blue-500">{{ $notice->title }}</a>
+                </li>
             @endforeach
         </ul>
         <div class="mt-8 text-center">
@@ -88,24 +118,26 @@
             <div class="my-8 pb-4 border-b">
                 {{-- <p class="text-lg text-left">カテゴリ</p>
                 <ul class="flex text-center pt-2">
-                    @foreach($categories as $category)
+                    @foreach ($categories as $category)
                     <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">{{ $category->name }}</a></li>
                     @endforeach
                 </ul> --}}
             </div>
             <div class="flex flex-wrap -mx-3">
                 @foreach ($blogs as $blog)
-                <article class="w-full md:w-1/2 lg:w-1/3 p-3">
+                    <article class="w-full md:w-1/2 lg:w-1/3 p-3">
                         <div class="border rounded-lg overflow-hidden shadow">
                             <div class="relative h-52">
                                 <span
-                                    class="absolute text-xs text-gray-400 px-2 border border-white bg-gray-100 uppercase py-2 px-10 left-0 bottom-0">{{ $blog->category->name}}</span>
-                                <a href="{{ route('blogs.show', ['blog' => $blog->id ])}}"><img class="w-full h-56 object-cover"
-                                    src="{{ asset('storage/' . $blog->image) }}" alt=""></a>
-                                <time class="block text-xs text-gray-500 text-right pt-1 pr-2">{{ $blog->created_at->format('Y年m月d日') }}</time>
+                                    class="absolute text-xs text-gray-400 px-2 border border-white bg-gray-100 uppercase py-2 px-10 left-0 bottom-0">{{ $blog->category->name }}</span>
+                                <a href="{{ route('blogs.show', ['blog' => $blog->id]) }}"><img
+                                        class="w-full h-56 object-cover" src="{{ asset('storage/' . $blog->image) }}"
+                                        alt=""></a>
+                                <time
+                                    class="block text-xs text-gray-500 text-right pt-1 pr-2">{{ $blog->created_at->format('Y年m月d日') }}</time>
                             </div>
                             <div class="pt-2 pb-4 px-4">
-                                <a href="{{ route('blogs.show', ['blog' => $blog->id ])}}">
+                                <a href="{{ route('blogs.show', ['blog' => $blog->id]) }}">
                                     <h1 class="mb-2 text-2xl font-semibold font-heading text-left">{{ $blog->title }}</h1>
                                     <p class="mb-6 text-gray-500 leading-relaxed text-left truncate">
                                         {{ mb_substr($blog->body, 0, 15) }}</p>
@@ -113,14 +145,15 @@
                                 <div class="flex justify-between">
                                     <ul class="flex">
                                         @foreach ($blog->menus as $menu)
-                                        <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1">{{ $menu->name }}</li>
+                                            <li class="bg-gray-100 text-gray-400 text-xs mr-2 py-1">{{ $menu->name }}
+                                            </li>
                                         @endforeach
                                         <p class="font-medium font-semibold">{{ $blog->user->name }}</p>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                </article>
+                    </article>
                 @endforeach
             </div>
             <div class="mt-8 text-center">
@@ -142,8 +175,10 @@
                     <p class="font-bold text-3xl pb-5">OZCAFE</p>
                     <dl>
                         <dt class="text-xl font-medium">営業時間</dt>
-                        <dd class="pl-12 text-lg"><span class="mr-6">平日</span>11:30〜16:00<span class="ml-6"></span></dd>
-                        <dd class="pl-12 text-lg"><span class="mr-1">土日祝 </span>11:00〜16:30<span class="ml-6"></span></dd>
+                        <dd class="pl-12 text-lg"><span class="mr-6">平日</span>11:30〜16:00<span class="ml-6"></span>
+                        </dd>
+                        <dd class="pl-12 text-lg"><span class="mr-1">土日祝 </span>11:00〜16:30<span class="ml-6"></span>
+                        </dd>
                         <dt class="mt-5 text-xl font-medium">住所</dt>
                         <dd class="text-lg pl-12">〒795-0012<br>愛媛県大洲市大洲</dd>
                         <dt class="mt-5 text-xl font-medium">最寄り駅から</dt>
