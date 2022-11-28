@@ -3,35 +3,41 @@
 
 @section('content')
     <section>
-        <div class="hero">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="hero__title">Pork Grill Burger</div>
-                        <img src="images//index/pork.jpg" alt="" />
+        <div id="global-container">
+            <div id="container">
+                <div id="content">
+                    <div class="hero">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="hero__title">Pork Grill Burger</div>
+                                    <img src="images//index/pork.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="hero__title">BLT sand</div>
+                                    <img src="images//index/blt.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="hero__title">Fried Chicken</div>
+                                    <img src="images/index/flied.jpg" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="hero__title">Hamokatsu Burger</div>
+                                    <img src="images/index/hamokatu.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="hero__footer">
+                                <img class="hero__downarrow" src="images/index/arrow.svg">
+                                <span class="hero__scrolltext">scroll</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="hero__title">BLT sand</div>
-                        <img src="images//index/blt.jpg" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="hero__title">Fried Chicken</div>
-                        <img src="images/index/flied.jpg" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="hero__title">Hamokatsu Burger</div>
-                        <img src="images/index/hamokatu.jpg" alt="" />
-                    </div>
-                </div>
-                <div class="hero__footer">
-                    <img class="hero__downarrow" src="images/index/arrow.svg">
-                    <span class="hero__scrolltext">scroll</span>
                 </div>
             </div>
         </div>
-        <script src="/js/swiper-bundle.min.js"></script>
-        <script src="/js/hero-slider.js"></script>
-        <script src="/js/main.js"></script>
+        <script src="/css/animate/swiper-bundle.min.js"></script>
+        <script src="/css/animate/hero-slider.js"></script>
+        <script src="/css/animate/main.js"></script>
     </section>
 
 
