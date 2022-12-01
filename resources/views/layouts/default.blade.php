@@ -19,6 +19,7 @@
 <body class="antialiased bg-body text-body font-body">
     <div id="global-container">
         <div id="container">
+            <div class="mobile-menu__cover"></div>
             <!-- ▼▼▼▼共通ヘッダー▼▼▼▼ -->
             <header class="header">
                 <div class="container px-4 mx-auto">
