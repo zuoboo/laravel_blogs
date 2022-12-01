@@ -32,6 +32,10 @@
   transform: translate(-50%, -50%);
 }
 
+.hero {
+  overflow: hidden;
+  /* padding-top: 100px; */
+}
 .hero__title {
   position: absolute;
   top: 50%;
