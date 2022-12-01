@@ -3,7 +3,7 @@
 
 @section('content')
     <section>
-        <div id="global-container">
+        {{-- <div id="global-container"> --}}
             <div id="container">
                 <div id="content">
                     <div class="hero">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
         <script src="/css/animate/swiper-bundle.min.js"></script>
         <script src="/css/animate/hero-slider.js"></script>
         <script src="/css/animate/main.js"></script>
