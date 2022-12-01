@@ -1,4 +1,4 @@
-@use "mixin" as *;
+@use "../globals" as *;
 
 $cWhite: white;
 
@@ -42,6 +42,8 @@ $cWhite: white;
 }
 
 .hero {
+    overflow: hidden;
+    // padding-top: 100px;
   &__title {
     position: absolute;
     top: 50%;
