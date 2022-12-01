@@ -111,14 +111,6 @@
             <p class="text-center text-2xl">ブログ</p>
             <h2 class="mt-2 font-bold font-heading text-center text-3xl">ほぼ毎日お店の様子をお届け！！</h2>
 
-            <div class="my-8 pb-4 border-b">
-                {{-- <p class="text-lg text-left">カテゴリ</p>
-                <ul class="flex text-center pt-2">
-                    @foreach ($categories as $category)
-                    <li class="bg-gray-100 text-gray-400 py-1 px-3 mr-3"><a href="#">{{ $category->name }}</a></li>
-                    @endforeach
-                </ul> --}}
-            </div>
             <div class="flex flex-wrap -mx-3">
                 @foreach ($blogs as $blog)
                     <article class="w-full md:w-1/2 lg:w-1/3 p-3">
@@ -190,7 +182,7 @@
             </div>
             <div class="mx-auto">
                 <a href="/contact"
-                    class="inline-block text-xs text-white font-semibold leading-none rounded py-4 text-blue-700 border-solid bg-white border-blue-700 border-2 px-16 hover:text-white hover:bg-blue-700">お問い合わせ</a>
+                    class="inline-block text-xs text-white font-semibold leading-none rounded py-2 text-blue-700 border-solid bg-white border-blue-700 border-2 px-8 hover:text-white hover:bg-blue-700">お問い合わせ</a>
             </div>
         </div>
     </section>
